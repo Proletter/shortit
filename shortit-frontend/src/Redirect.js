@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-import axios from "axios"
 import { useEffect } from 'react';
+import axios from "axios"
 
 const Redirect=()=>{
     const { shortendpoint } = useParams();
@@ -11,7 +11,6 @@ const Redirect=()=>{
     useEffect(() => {
         async function getShortenedUrl() {
             try {
-                const axios = require('axios');
                 const res = await axios.get(redirectLink, { params: { shrunkUrl: shortendpoint } });
                 console.log(res.data[0].url)
                 let redirectUrl = res.data[0].url
@@ -25,7 +24,7 @@ const Redirect=()=>{
         }
         getShortenedUrl()
 
-      }, []);
+      }, [redirectLink,shortendpoint]);
    
   return <p>Redirecting...</p>
            
