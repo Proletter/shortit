@@ -5,13 +5,13 @@ import axios from "axios"
 
 const Redirect=()=>{
     const { shortendpoint } = useParams();
-    let redirectLink = process.env.REACT_APP_REDIRECT_URL
+    // let redirectLink = process.env.REACT_APP_REDIRECT_URL
 
    
     useEffect(() => {
         async function getShortenedUrl() {
             try {
-                const res = await axios.get(redirectLink, { params: { shrunkUrl: shortendpoint } });
+                const res = await axios.get('/api/redirecter', { params: { shrunkUrl: shortendpoint } });
                 console.log(res.data[0].url)
                 let redirectUrl = res.data[0].url
                 window.location.href = redirectUrl;

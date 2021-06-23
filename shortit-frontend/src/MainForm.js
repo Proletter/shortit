@@ -6,18 +6,16 @@ import {useState} from 'react'
 
 const MainForm = ({setShrunkUrl, shrunkUrl, setShowLink}) => {
   const [input, setInput] = useState('')
-  const API_URL = process.env.REACT_APP_SHORTNER_URL
+  // const API_URL = process.env.REACT_APP_SHORTNER_URL
   const body = {
     url: input
   }
 
   async function callEndpoint(e){
-    console.log(e.target.value)
-    console.log(body)
     setInput('')
     try {
      
-      const res = await axios.post(API_URL,JSON.stringify(body));  
+      const res = await axios.post('/api/shortner',JSON.stringify(body));  
       setShrunkUrl(res.data.shrunkUrl)
       setShowLink(true)
     } catch (error) {
