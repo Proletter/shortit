@@ -24,7 +24,7 @@ const Redirect=()=>{
         }
         getShortenedUrl()
 
-      }, [redirectLink,shortendpoint]);
+      }, [shortendpoint]);
    
   return <p>Redirecting...</p>
            
