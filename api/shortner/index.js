@@ -14,10 +14,11 @@ module.exports = async function (context, req) {
     let extraChars = shrunkUrl || generateRandomChars(5)
 
     const password = process.env.MONGODB_PASSWORD
+    context.log(password)
     const uri = `mongodb+srv://Shortit:${password}@shortit.c2zyd.mongodb.net/shortit?retryWrites=true&w=majority`;
     await mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(()=> context.log("connected to Mongo..."))
-    .catch(err=> context.error("could not connect to db", err))
+    .catch(err=> context.log("could not connect to db", err))
     context.log('JavaScript HTTP trigger function processed a request.');
 
 
