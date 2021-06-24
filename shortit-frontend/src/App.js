@@ -20,7 +20,7 @@ function App() {
         <Form setShowLink={setShowLink} setShrunkUrl={setShrunkUrl} shrunkUrl={shrunkUrl}/>
         <p className="mt-4">your shrunk url is: 
           {
-            showLink && <a target="_blank" rel="noreferrer" href={`/${shrunkUrl}`}> http://testurl.com/{shrunkUrl}</a>
+            showLink && <a target="_blank" rel="noreferrer" href={`/${shrunkUrl}`}> http://quikshort.com/{shrunkUrl}</a>
           }
           
         </p>
